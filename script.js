@@ -12,7 +12,7 @@ function startGame() {
     questionContainer.classList.remove('hide');
     timerContainer.classList.remove('hide');
     // the timer starts a countdown.
-
+    // countdownTimer();
     // the question is chosen randomly and displayed with corresponding answers.
 }
 
@@ -49,7 +49,7 @@ function countdownTimer() {
     // the first parameter is a function that decrements the time and updates on the page.
     var timerInterval = setInterval(function() {
         secondsLeft--;
-        timer.textContent = secondsLeft;
+        timer.textContent = 'Time Left: ' + secondsLeft;
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
