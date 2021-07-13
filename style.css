@@ -70,6 +70,14 @@ body {
   gap: 1em;
 }
 
+.correct {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
 .hide {
   display: none;
 }
