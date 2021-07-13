@@ -37,7 +37,8 @@ body {
   font-size: 20px;
 }
 
-#question-container {
+#question-container,
+#leaderboard-container {
   padding: 10px;
   background-color: white;
   border-radius: 8px;
@@ -46,7 +47,8 @@ body {
   box-shadow: 10px 10px 8px darkslategrey;
 }
 
-#question {
+#question,
+.leaderboard-heading {
   padding: 5px;
   margin-bottom: 25px;
   font-size: 40px;
@@ -68,6 +70,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
+}
+
+.float-left {
+  display: inline;
+  float: left;
 }
 
 .correct {

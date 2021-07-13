@@ -5,6 +5,7 @@ var timer = document.getElementById('timer')
 var timerContainer = document.getElementById('timer-container')
 var questionEl = document.getElementById('question')
 var answerButtonEl = document.getElementById('answer-buttons')
+var leaderBoardContainer = document.getElementById('leaderboard-container')
 var randomQuestions
 var randomQuestionIndex
 var playerScore = 0
@@ -77,8 +78,17 @@ function selectAnswer (event) {
    } else {
        secondsLeft-=8; 
    }
-   document.getElementById('player-score').innerText = playerScore;
-   nextBtnEl.classList.remove('hide');
+   document.getElementById('player-score').innerText = 'Score: ' + playerScore;
+//    nextBtnEl.classList.remove('hide');
+   if (randomQuestions.length > randomQuestionIndex + 1) {
+       nextBtnEl.classList.remove('hide');
+       leaderBoardContainer.classList.add('hide');
+   } else {
+       nextBtnEl.classList.add('hide');
+       questionContainer.classList.add('hide');
+       leaderBoardContainer.classList.remove('hide');
+   }
+   
 }
 
 function checkIfCorrect(element, correct) {
@@ -114,7 +124,8 @@ var questionsArray = [
             {text: 'Debugger', correct: false},
             {text: 'Repeater', correct: false}
         ]
-    }, {
+    }
+    , {
         question: 'In Javascript, what element is used to store and manipulate text, usually in multiples?',
         answers: [
             {text: 'Variables', correct: true}, 
@@ -122,63 +133,64 @@ var questionsArray = [
             {text: 'Arrays', correct: false},
             {text: 'Strings', correct: false}
         ]
-    }, {
-        question: 'In Javascript, what is a block of code called that is used to perform a specific task?',
-        answers: [
-            {text: 'String', correct: false}, 
-            {text: 'Declaration', correct: false},
-            {text: 'Variable', correct: false},
-            {text: 'Function', correct: true}
-        ]
-    }, {
-        question: 'What tag is used to define a hyperlink or link to another page?',
-        answers: [
-            {text: '<em>', correct: false}, 
-            {text: '<src>', correct: false},
-            {text: '<a>', correct: true},
-            {text: '<blockquote>', correct: false}
-        ]
-    }, {
-        question: 'What tag is used to define an image - or add an image - to an HTML page?',
-        answers: [
-            {text: '<img>', correct: true}, 
-            {text: '<meta>', correct: false},
-            {text: '<div>', correct: false},
-            {text: '<h2>', correct: false}
-        ]
-    }, {
-        question: 'What does the "M" stand for in "HTML"?',
-        answers: [
-            {text: 'Meta-data', correct: false}, 
-            {text: 'Markup', correct: true},
-            {text: 'Modality', correct: false},
-            {text: 'Modern', correct: false}
-        ]
-    }, {
-        question: 'What is the CSS property that offers extra information when you hover over that element?',
-        answers: [
-            {text: 'Info Block', correct: false}, 
-            {text: 'Tutorial', correct: false},
-            {text: 'Hint', correct: false},
-            {text: 'Tooltip', correct: true}
-        ]
-    }, {
-        question: 'What is the CSS property used to set the horizontal alignment of text or words on a page?',
-        answers: [
-            {text: 'Padding', correct: false}, 
-            {text: 'Spacing', correct: false},
-            {text: 'Horizontal-align', correct: false},
-            {text: 'Text-align', correct: true}
-        ]
-    }, {
-        question: 'What jQuery method is used to insert content at the END of a selected element?',
-        answers: [
-            {text: 'append()', correct: true}, 
-            {text: 'prepend()', correct: false},
-            {text: 'after()', correct: false},
-            {text: 'final()', correct: false}
-        ]
     }
+    // , {
+    //     question: 'In Javascript, what is a block of code called that is used to perform a specific task?',
+    //     answers: [
+    //         {text: 'String', correct: false}, 
+    //         {text: 'Declaration', correct: false},
+    //         {text: 'Variable', correct: false},
+    //         {text: 'Function', correct: true}
+    //     ]
+    // }, {
+    //     question: 'What tag is used to define a hyperlink or link to another page?',
+    //     answers: [
+    //         {text: '<em>', correct: false}, 
+    //         {text: '<src>', correct: false},
+    //         {text: '<a>', correct: true},
+    //         {text: '<blockquote>', correct: false}
+    //     ]
+    // }, {
+    //     question: 'What tag is used to define an image - or add an image - to an HTML page?',
+    //     answers: [
+    //         {text: '<img>', correct: true}, 
+    //         {text: '<meta>', correct: false},
+    //         {text: '<div>', correct: false},
+    //         {text: '<h2>', correct: false}
+    //     ]
+    // }, {
+    //     question: 'What does the "M" stand for in "HTML"?',
+    //     answers: [
+    //         {text: 'Meta-data', correct: false}, 
+    //         {text: 'Markup', correct: true},
+    //         {text: 'Modality', correct: false},
+    //         {text: 'Modern', correct: false}
+    //     ]
+    // }, {
+    //     question: 'What is the CSS property that offers extra information when you hover over that element?',
+    //     answers: [
+    //         {text: 'Info Block', correct: false}, 
+    //         {text: 'Tutorial', correct: false},
+    //         {text: 'Hint', correct: false},
+    //         {text: 'Tooltip', correct: true}
+    //     ]
+    // }, {
+    //     question: 'What is the CSS property used to set the horizontal alignment of text or words on a page?',
+    //     answers: [
+    //         {text: 'Padding', correct: false}, 
+    //         {text: 'Spacing', correct: false},
+    //         {text: 'Horizontal-align', correct: false},
+    //         {text: 'Text-align', correct: true}
+    //     ]
+    // }, {
+    //     question: 'What jQuery method is used to insert content at the END of a selected element?',
+    //     answers: [
+    //         {text: 'append()', correct: true}, 
+    //         {text: 'prepend()', correct: false},
+    //         {text: 'after()', correct: false},
+    //         {text: 'final()', correct: false}
+    //     ]
+    // }
 ]
 
 
@@ -204,5 +216,5 @@ function countdownTimer() {
 
 // endQuiz function - gets rid of the timer from being displayed, and brings up highscores with input fields.
 function endQuiz() {
-    timer.textContent = '';
+
 }
