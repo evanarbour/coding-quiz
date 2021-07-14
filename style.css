@@ -93,6 +93,15 @@ body {
   font-family: "Encode Sans SC", sans-serif;
 }
 
+#submit-button {
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: var(--highlight);
+  color: white;
+  border-radius: 5px;
+  font-family: "Oswald", sans-serif;
+}
+
 .btn:hover {
   opacity: 0.6;
 }

@@ -83,7 +83,8 @@ function selectAnswer (event) {
        secondsLeft-=10; 
    };
    document.getElementById('player-score').innerText = 'Score: ' + playerScore;
-
+   
+   // checks to see if there are any more questions
    if (randomQuestions.length > randomQuestionIndex + 1) {
        nextBtnEl.classList.remove('hide');
        leaderBoardContainer.classList.add('hide');
@@ -91,12 +92,11 @@ function selectAnswer (event) {
        nextBtnEl.classList.add('hide');
        questionContainer.classList.add('hide');
        leaderBoardContainer.classList.remove('hide');
-    //    startBtnEl.classList.remove('hide');
-    //    startBtnEl.innerText = 'Restart'
    }
    
 }
 
+// this assigns css styling to the buttons based on if the answer is correct or wrong
 function checkIfCorrect(element, correct) {
     clearStatus(element);
     if (correct) {
@@ -122,8 +122,10 @@ function saveScore() {
 };
 
 function showScores() {
+    // get the data from the local storage
     var leaderBoard = JSON.parse(localStorage.getItem('allplayerData'));
     if (leaderBoard !== null) {
+        // attach that data the HTML elements on the page
         document.getElementById("player-initials").innerHTML = leaderBoard.initials;
         document.getElementById("player-highscore").innerHTML = leaderBoard.score;
     } else {
@@ -131,6 +133,7 @@ function showScores() {
     } 
 };
 
+// functions tied to the click event of the submit button
 submitButton.addEventListener("click", function(event) {
     event.preventDefault();
     saveScore();
@@ -140,7 +143,7 @@ submitButton.addEventListener("click", function(event) {
     restartBtnEl.classList.remove('hide');
     });
 
-
+// clears any styling to the buttons from previous questions
 function clearStatus (element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
@@ -165,8 +168,7 @@ var questionsArray = [
             {text: 'Debugger', correct: false},
             {text: 'Repeater', correct: false}
         ]
-    }
-    , {
+    }, {
         question: 'In Javascript, what element is used to store and manipulate text, usually in multiples?',
         answers: [
             {text: 'Variables', correct: true}, 
@@ -262,7 +264,7 @@ function clearTimer() {
     timer.textContent = " ";
 }
 
-// added a function to the click event of the restart button to reload the page, to restart the game.
+// added a function to the click event of the restart button to reload the page, to restart the
 restartBtnEl.addEventListener('click', function() {
     window.location.reload();
     return false;
