@@ -11,4 +11,4 @@ Javascript always seems to me like a rippling effect. Once you create one functi
 
 My biggest challenge was getting lost in my own code! It was really easy to lose track of the big picture. I used many comments throughout the process to help myself down the road and guide what needed to get done. The comments were very helpful in describing the functionality of each section of code as well.
 
-![quiz-application]
+![quiz-application](./images/quiz-screenshot.png)
