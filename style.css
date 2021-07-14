@@ -1,5 +1,10 @@
+:root {
+  --text: #0053d0;
+  --highlight: #08c5ff;
+}
+
 body {
-  background-color: #1a7f66;
+  background-color: #697f8f;
   margin-right: 30px;
   margin-left: 30px;
 }
@@ -11,15 +16,18 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .start-btn {
   padding: 10px;
   background-color: white;
   border-radius: 8px;
   margin-top: 40px;
+  margin-bottom: 40px;
   font-size: 40px;
-  color: #115544;
+  color: var(--text);
   font-weight: bold;
-  border: 4px solid #115544;
+  border: 4px solid var(--highlight);
+  font-family: "Oswald", sans-serif;
 }
 
 #timer-container {
@@ -29,22 +37,26 @@ body {
   align-items: center;
   margin: 30px 15px 5px 15px;
   padding: 10px;
-  border: 2px solid #2acfa6;
+  border: 2px solid var(--highlight);
   border-radius: 20px;
-  color: #115544;
+  color: var(--text);
   font-weight: bold;
   background-color: white;
   font-size: 20px;
 }
 
 #question-container,
-#leaderboard-container {
+#input-container {
   padding: 10px;
   background-color: white;
   border-radius: 8px;
   margin-top: 40px;
-  border: 4px solid #115544;
+  border: 4px solid var(--highlight);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
   box-shadow: 10px 10px 8px darkslategrey;
+  font-family: "Encode Sans SC", sans-serif;
 }
 
 #question,
@@ -53,17 +65,40 @@ body {
   margin-bottom: 25px;
   font-size: 40px;
   font-weight: bold;
-  color: #115544;
+  color: var(--text);
+  font-family: "Oswald", sans-serif;
+}
+
+#high-score-list {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 40px;
+  border: 4px solid var(--highlight);
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--text);
+  box-shadow: 10px 10px 8px darkslategrey;
+  font-family: "Oswald", sans-serif;
 }
 
 .btn {
   font-size: 20px;
-  background-color: #2acfa6;
+  background-color: var(--highlight);
   color: white;
   padding: 10px;
-  border: 3px solid #115544;
+  border: 3px solid var(--text);
   border-radius: 8px;
   font-weight: bold;
+  font-family: "Encode Sans SC", sans-serif;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.start-btn:hover {
+  color: #76dfff;
 }
 
 .btn-grid {
@@ -73,16 +108,17 @@ body {
 }
 
 .float-left {
-  display: inline;
   float: left;
 }
 
 .correct {
   background-color: green;
+  border: 3px solid white;
 }
 
 .wrong {
   background-color: red;
+  border: 3px solid white;
 }
 
 .hide {
