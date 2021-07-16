@@ -247,7 +247,7 @@ function countdownTimer() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timer.textContent = 'Time Left: ' + secondsLeft;
-        if (secondsLeft ≤ 0) {
+        if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             clearTimer();
             nextBtnEl.classList.add('hide');
