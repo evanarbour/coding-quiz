@@ -1,14 +1,28 @@
-# Creating a Coding Quiz with Javascript
+# Coding Quiz
 
-Creating this quiz involved proficiency in HTML, CSS, and Javascript.
+## Description
 
-This first step in creating this quiz was making the overall structure in the HTML file: creating the containers for each section (question-container, timer-container, input-container, controls, high-score-list). These different sections help to separate each major piece of the application for easier styling and manuverability when it comes to using Javascript.
+This app was created using a combination of HTML, CSS, and JavaScript.
+I created this app to test my knowledge of using all three languages together to create a fun game to test the user's knowledge of various development topics - against a sixty second timer.
 
-The next step in the process was some minimum styling. I prefere to use simply borders to help me visualize the space that the containers were taking up. I create simple layout and then go back at the end and fine-tune the application at the end.
+## Usage
 
-Once the first-pass on the CSS was done, I created my .js file and started to create the backbone of the project: the interactivity of the application.
-Javascript always seems to me like a rippling effect. Once you create one function, you realize you need another, which depends on another variable, which depends on another etc, etc.
+Using the Coding Quiz is very simple and starts with a large "Start Quiz!" button in the center of the viewport. I wanted the entire quiz to be inside of a "card" format with contrasting border to give it a more game-like effect.
 
-My biggest challenge was getting lost in my own code! It was really easy to lose track of the big picture. I used many comments throughout the process to help myself down the road and guide what needed to get done. The comments were very helpful in describing the functionality of each section of code as well.
+Click on the "Start Quiz!" button and the game begins! The timer begins right away - so go quickly!
+
+[Click here](https://evanarbour.github.io/coding-quiz/) to try the Coding Quiz.
 
 ![quiz-application](./images/quiz-screenshot.png)
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+## Contact
+
+Let's Connect! Reach me on:
+
+- [Github](https://github.com/evanarbour)
+- [LinkedIn](https://www.linkedin.com/in/evan-arbour/)
+- [Email](evan.arbour@gmail.com)
