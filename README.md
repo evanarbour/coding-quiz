@@ -13,7 +13,7 @@ Click on the "Start Quiz!" button and the game begins! The timer begins right aw
 
 [Click here](https://evanarbour.github.io/coding-quiz/) to try the Coding Quiz.
 
-![quiz-application](./images/quiz-screenshot.png)
+![quiz-application](./assets/images/quiz-screenshot.png)
 
 ## License
 
